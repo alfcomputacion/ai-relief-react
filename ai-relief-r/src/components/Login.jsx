@@ -30,7 +30,7 @@ function setCookie(name, value, days){
 
       if(getCookie("Token") != ""){
           console.log("Token is :",  getCookie("Token"))
-          // setSuccess(true)
+          setSuccess(true)
       }
       console.log("USEFFECT: ",auth.token)
       if(auth.token != undefined){
