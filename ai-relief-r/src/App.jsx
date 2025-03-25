@@ -17,7 +17,7 @@ const [errMsg, setErrMsg] = useState('');
  
         <p>{errMsg}</p>
         <Navbar />
-        <h2 className='mt-2'>AI relief</h2>
+        <h2 className='mt-2'>Welcome</h2>
         <AgentNextSteps />
         <div className="side">
         </div>

@@ -10,6 +10,7 @@ const Login = () => {
     const [pwd, setPwd]= useState('');
     const [tokenCookie, setTokenCookie] = useState({})
     const [errMsg, setErrMsg] = useState('');
+   
 
     useEffect(()=>{
         userRef.current.focus();
@@ -26,6 +27,7 @@ function setCookie(name, value, days){
   const expires = "expires=" + date.toUTCString();
   document.cookie = name + "=" + value + ";" + expires + ";path=/"
 }
+
   useEffect(()=>{
 
       if(getCookie("Token") != ""){
@@ -106,6 +108,7 @@ function getCookie(cname) {
       setErrMsg(err.toUTCString)
     }
     }
+
    return (
     <>
     {
@@ -138,7 +141,11 @@ function getCookie(cname) {
         />
         <div>
           <div className="d-grid">
-            <button className='btn btn-outline-success text-white'>Sign in</button>
+            <button 
+              className='btn btn-outline-success text-white'
+              onClick={()=>handleSubmit()}
+            >Sign in
+            </button>
           </div>
 
         </div>
