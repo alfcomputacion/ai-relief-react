@@ -6,8 +6,8 @@ export default function AgentNextSteps() {
 const [response, setResponse] = useState(false);
 const [formData, setFormData] = useState({
   fileName: '',
-  instructions: 'Resume'
-  
+  instructions: 'Resume',
+  file: null,
 })
 
 const {aiResponse, setAiResponse} = useContext(AiReliefContext);
@@ -23,19 +23,42 @@ const handleInput = (e)=>{
     [name]: value,
   }));
 }
+
+  // Manejar el envío del formulario
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.file) {
+      alert("Por favor, selecciona un archivo PDF.");
+      return;
+    }
+  }
+  const handleFileChange = (e) => {
+  const archivo = e.target.files[0]; // Obtenemos el archivo seleccionado
+  setFormData({
+    ...formData, // Conserva los valores existentes
+    file: archivo // Actualiza el campo "file" con el archivo seleccionado
+  });
+};
     // handles assesment api call
     const handleAssesment = async (e) =>{
       console.log('trying AI-API')
-      
+      const data = new FormData
+      data.append('instructions', formData.instructions);
+      data.append('file', formData.file)
+
       // try {
         const response = await fetch ('http://127.0.0.1:8000/api/airelief/text/',{
+          headers: {
+            
+            "Content-Type": "multipart/form-data",
+          },
           method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(formData)
+          body: data,
           })
-          const data =  await response.json();
-          if (data){
-            setAiResponse(data.data)
+          const dta =  await response.json();
+          if (dta){
+            setAiResponse(dta.data)
             setResponse(true)
 
           }
@@ -59,6 +82,11 @@ const handleInput = (e)=>{
         value={formData.instructions} 
         onChange={handleInput} 
         placeholder='Instructions for AI'/>
+      <form onSubmit={handleSubmit}>
+        {/* Campo para seleccionar el archivo */}
+        <input type="file" onChange={handleFileChange} accept=".pdf" />
+        <button type="submit">Subir y resumir PDF</button>
+      </form>
 
       <button onClick={() => handleAssesment()  } className='btn btn-info m-1'>Analize</button>
       {response?<div style={{whiteSpace: 'pre-wrap'}} className='text-start w-75 h-75 m-auto pt-4'>
