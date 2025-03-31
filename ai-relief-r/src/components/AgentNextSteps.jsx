@@ -45,14 +45,15 @@ const handleInput = (e)=>{
       console.log('trying AI-API')
       const data = new FormData
       data.append('instructions', formData.instructions);
-      data.append('file', formData.file)
+      data.append('file', formData.file);
+      data.append('fileName', formData.fileName);
 
       // try {
         const response = await fetch ('http://127.0.0.1:8000/api/airelief/text/',{
-          headers: {
+          // headers: {
             
-            "Content-Type": "multipart/form-data",
-          },
+          //   "Content-Type": "multipart/form-data",
+          // },
           method: "POST",
           body: data,
           })
