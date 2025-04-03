@@ -13,7 +13,7 @@ const [errMsg, setErrMsg] = useState('');
   return (
    <>
     {success ? (
-      <section className='section-player'>
+      <section className='section-welcome'>
  
         <p>{errMsg}</p>
         <Navbar />
