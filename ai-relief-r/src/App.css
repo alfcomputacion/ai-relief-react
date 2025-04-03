@@ -1,18 +1,16 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 0;
+
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
   margin-top: 0;
 }
-
-
-/* .container-form {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-} */
-
-/*
-.section-welcome {
-  background-color: red;
-} */

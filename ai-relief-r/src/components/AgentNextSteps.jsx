@@ -98,7 +98,7 @@ const handleInput = (e)=>{
 
       <input type="file" onChange={handleFileChange} accept=".pdf" />
       <button onClick={() => handleAssesment()  } className='btn btn-info m-1'>Analize</button>
-      {response?<div style={{whiteSpace: 'pre-wrap'}} className='text-start w-75 h-75 m-auto pt-4'>
+      {response?<div style={{whiteSpace: 'pre-wrap'}} className='text-start  m-auto pt-4'>
         {aiResponse}
       </div>:<div>...</div>}
     </span>
