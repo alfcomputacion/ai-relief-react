@@ -29,7 +29,7 @@ export default function AudioRecorder() {
       });
 
       const data = await response.json();
-      setTranscript(data.transcription);
+      setTranscript(data.data);
     };
 
     mediaRecorder.start();
@@ -56,6 +56,9 @@ export default function AudioRecorder() {
           <p>{transcript}</p>
         </div>
       )}
+      
     </div>
   );
 }
+
+

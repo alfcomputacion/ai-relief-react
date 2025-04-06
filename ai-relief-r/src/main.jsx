@@ -5,13 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.jsx'
 import { AuthProvider } from './context/AuthProvider.jsx'
 import { AiReliefProvider } from './context/AiReliefProvider.jsx';
+import { VoiceProvider } from './context/VoiceContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <AiReliefProvider>
-        <App />
-      </AiReliefProvider>
+      <VoiceProvider>
+        <AiReliefProvider>
+          <App />
+        </AiReliefProvider>
+      </VoiceProvider>
     </AuthProvider>
   </StrictMode>,
 )
