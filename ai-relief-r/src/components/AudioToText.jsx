@@ -23,7 +23,7 @@ export default function AudioRecorder() {
       const formData = new FormData();
       formData.append("audio", audioBlob, "audio.webm");
 
-      const response = await fetch("http://localhost:5000/upload", {
+      const response = await fetch("http://127.0.0.1:8000/api/airelief/upload/", {
         method: "POST",
         body: formData,
       });

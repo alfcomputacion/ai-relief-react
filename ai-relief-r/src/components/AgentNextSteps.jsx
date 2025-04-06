@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 // import AssesContext from '../context/AssesProvider'
 import AiReliefContext from '../context/AiReliefProvider'
+import AudioToText from '../components/AudioToText'
 
 export default function AgentNextSteps() {
 const [response, setResponse] = useState(false);
@@ -76,6 +77,7 @@ const handleInput = (e)=>{
   return (
     <span className='container-form'>
      <p>Hola, Hello, Bonjour, Hallo, Ciao, Olá, こんにちは</p> 
+     <AudioToText />
      <form onSubmit={handleSubmit}>
         <label htmlFor="fileName">Title</label>
         <input  type="text"
