@@ -5,6 +5,7 @@ export default function RecorderUI() {
 
   return (
     <div className="p-4">
+      <p>AUDIO RECORDER COMPONENT</p>
       <button
         onClick={recording ? stopRecording : startRecording}
         className="bg-blue-600 text-info px-4 py-2 rounded"

@@ -15,7 +15,7 @@ export default function RecorderUI() {
 
       {transcript && (
         <div className="mt-4">
-          <h2 className="font-bold">Transcripción:</h2>
+          <h2 className="font-bold">Voice Context:</h2>
           <p>{transcript}</p>
         </div>
       )}
