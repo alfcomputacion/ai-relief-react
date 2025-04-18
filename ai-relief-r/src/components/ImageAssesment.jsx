@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react'
-// import AssesContext from '../context/AssesProvider'
 import AiReliefContext from '../context/AiReliefProvider'
-import AudioToText from '../components/AudioToText'
-// import AudioRecorder from '../components/AudioRecorder';
+
 
 export default function AgentNextSteps() {
 const [response, setResponse] = useState(false);
+
 const [formData, setFormData] = useState({
   fileName: '',
   instructions: '',
@@ -32,7 +31,7 @@ const handleInput = (e)=>{
     e.preventDefault();
 
     if (!formData.file) {
-      alert("Por favor, selecciona un archivo PDF.");
+      alert("Por favor, selecciona un archivo JPG.");
       return;
     }
   }
@@ -44,19 +43,19 @@ const handleInput = (e)=>{
   });
 };
     // handles assesment api call
-    const handleAssesment = async (e) =>{
-      console.log('trying AI-API')
+    const handleAssesment = async () =>{
+      console.log('trying AI-API Image assesment...')
       const data = new FormData
       data.append('instructions', formData.instructions);
       data.append('file', formData.file);
       data.append('fileName', formData.fileName);
     if (!formData.file) {
-      alert("Por favor, selecciona un archivo PDF.");
+      alert("Por favor, selecciona un archivo JPG.");
       return;
     }
 
       // try {
-        const response = await fetch ('http://127.0.0.1:8000/api/airelief/text/',{
+        const response = await fetch ('http://127.0.0.1:8000/api/airelief/',{
           // headers: {
             
           //   "Content-Type": "multipart/form-data",
@@ -77,6 +76,7 @@ const handleInput = (e)=>{
     }
   return (
     <span className='container-form'>
+        <h3>Image Assesment</h3>
      <p>Hola, Hello, Bonjour, Hallo, Ciao, Olá, こんにちは</p> 
      {/* <AudioRecorder />
 
@@ -88,7 +88,7 @@ const handleInput = (e)=>{
               value={formData.fileName}
               onChange={handleInput}
               placeholder='title of file'/>
-        <label htmlFor="instructions">Instructions</label>
+        <label htmlFor="instructions">**Instructions**</label>
         <textarea 
               type="text"
               rows="10"
@@ -101,7 +101,7 @@ const handleInput = (e)=>{
           {/* <button type="submit">Subir y resumir PDF</button> */}
       </form>
 
-      <input type="file" onChange={handleFileChange} accept=".pdf" />
+      <input type="file" onChange={handleFileChange} accept="image/png, image/jpeg" />
       <button onClick={() => handleAssesment()  } className='btn btn-info m-1'>Analize</button>
       {response?<div style={{whiteSpace: 'pre-wrap'}} className='text-start  m-auto pt-4'>
         {aiResponse}

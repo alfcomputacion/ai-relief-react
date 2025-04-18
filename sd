@@ -1,0 +1,15 @@
+[33ma1a284f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m porcupine uninstalled
+[33m34f46b5[m fixed audio recorder component import
+[33m5b03a2f[m trabaja con vosk y responde data
+[33m3e424ca[m sends audio to server
+[33m172b430[m Audio to text
+[33m844af3e[m fixed UI
+[33m4114124[m looks better UI
+[33m8a89cfe[m it works
+[33md756c97[m cors but
+[33m30cfd25[m shoud be updated
+[33m1dcb7bb[m working and it sends title of pdf
+[33me0e406c[m changed url
+[33mda97fe4[m connects to django ai api
+[33me4d6a9c[m boilerplate
+[33m8d629c2[m first commit
