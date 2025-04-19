@@ -18,15 +18,12 @@ const [errMsg] = useState('');
     {success ? (
       <section className='section-welcome'>
  
-        <p>{errMsg}</p>
         <Navbar />
-        <h2 className='mt-2'>Welcome</h2>
+        <p>{errMsg}</p>
         <Routes>
           <Route path='/' element={<ImageAssesment />} />
-          <Route path='/resume' element={<AgentNextSteps />} />
+          <Route path='/summary' element={<AgentNextSteps />} />
         </Routes>
-        {/* <AgentNextSteps />
-        <ImageAssesment /> */}
         <div className="side">
         </div>
 

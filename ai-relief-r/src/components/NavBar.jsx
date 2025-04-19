@@ -1,7 +1,8 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 
 const Navbar = () => {
+    const location = useLocation();
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -13,7 +14,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-                <Link className="nav-link" to="/"><span className="sr-only">Home</span></Link>
+                <Link className="nav-link" to="/" style={{ fontWeight: location.pathname === '/' ? '700' : 'normal' }}><span className="sr-only">Home</span></Link>
                 {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
             </li>
             <li className="nav-item">
@@ -31,7 +32,7 @@ const Navbar = () => {
                 </div>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to="/resume" >Create PDF</Link>
+                <Link className="nav-link" to="/summary"  style={{ fontWeight: location.pathname === '/summary' ? '700' : 'normal' }}>Create PDF</Link>
 {/*             
                 <a className="nav-link disabled" href="#">Disabled</a> */}
             </li>
