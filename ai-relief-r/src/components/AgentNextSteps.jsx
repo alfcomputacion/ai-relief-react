@@ -44,7 +44,7 @@ const handleInput = (e)=>{
   });
 };
     // handles assesment api call
-    const handleAssesment = async (e) =>{
+    const handleAssesment = async () =>{
       console.log('trying AI-API')
       const data = new FormData
       data.append('instructions', formData.instructions);
