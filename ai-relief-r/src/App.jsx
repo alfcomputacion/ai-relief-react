@@ -6,6 +6,7 @@ import AuthContext from './context/AuthProvider';
 import AgentNextSteps from './components/AgentNextSteps';
 import Navbar from './components/NavBar';
 import ImageAssesment from './components/ImageAssesment';
+import AboutUs from './components/AboutUs';
 
 function App() {
 // const [success, setSuccess]= useState(false);
@@ -23,6 +24,7 @@ const [errMsg] = useState('');
         <Routes>
           <Route path='/' element={<ImageAssesment />} />
           <Route path='/summary' element={<AgentNextSteps />} />
+          <Route path='/aboutus' element={<AboutUs />} />
         </Routes>
         <div className="side">
         </div>

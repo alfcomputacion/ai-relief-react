@@ -41,3 +41,20 @@ textarea {
   resize: vertical;
   min-height: 100px;
 }
+
+ul {
+  list-style-type: none;
+  text-align: justify;
+}
+
+.about-container {
+  width: 70%;
+
+}
+
+.active {
+  font-weight: 700;
+  font-size: large;
+  border-bottom: 2px solid white;
+
+}

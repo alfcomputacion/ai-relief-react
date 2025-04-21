@@ -14,3 +14,12 @@
   text-align: center;
   margin-top: 0;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 0;
+}

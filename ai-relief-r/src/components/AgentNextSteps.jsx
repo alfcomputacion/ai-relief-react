@@ -77,7 +77,7 @@ const handleInput = (e)=>{
     }
   return (
     <span className='container-form'>
-      <h3>Summary Create PDF</h3>
+      <h3 className='border-bottom border-success border-3 p-2'>Summary Create PDF</h3>
      <p>Hola, Hello, Bonjour, Hallo, Ciao, Olá, こんにちは</p> 
      {/* <AudioRecorder />
 

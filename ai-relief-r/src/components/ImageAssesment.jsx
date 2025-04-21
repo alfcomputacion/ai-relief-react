@@ -76,7 +76,7 @@ const handleInput = (e)=>{
     }
   return (
     <span className='container-form'>
-        <h3>Image Assesment</h3>
+        <h3 className='border-bottom border-primary border-2 p-2'>Image Assesment</h3>
      <p>Hola, Hello, Bonjour, Hallo, Ciao, Olá, こんにちは</p> 
      {/* <AudioRecorder />
 
