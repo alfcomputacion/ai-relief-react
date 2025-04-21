@@ -4,6 +4,7 @@ import AiReliefContext from '../context/AiReliefProvider'
 
 export default function AgentNextSteps() {
 const [response, setResponse] = useState(false);
+const [image, setImage] = useState()
 
 const [formData, setFormData] = useState({
   fileName: '',
@@ -37,6 +38,7 @@ const handleInput = (e)=>{
   }
   const handleFileChange = (e) => {
   const archivo = e.target.files[0]; // Obtenemos el archivo seleccionado
+  setImage(URL.createObjectURL(archivo))
   setFormData({
     ...formData, // Conserva los valores existentes
     file: archivo // Actualiza el campo "file" con el archivo seleccionado
@@ -101,6 +103,14 @@ const handleInput = (e)=>{
           {/* <button type="submit">Subir y resumir PDF</button> */}
       </form>
 
+      {image?
+      <div className='d-flex m-auto'>
+
+      <img src={image} alt="File" width={200}/>
+      </div>
+        :
+        <span>____________</span>
+      }
       <input type="file" onChange={handleFileChange} accept="image/png, image/jpeg" />
       <button onClick={() => handleAssesment()  } className='btn btn-info m-1'>Analize</button>
       {response?<div style={{whiteSpace: 'pre-wrap'}} className='text-start  m-auto pt-4'>
