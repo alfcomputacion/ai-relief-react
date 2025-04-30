@@ -5,7 +5,7 @@ import Login from './components/Login'
 import AuthContext from './context/AuthProvider';
 import AgentNextSteps from './components/AgentNextSteps';
 import Navbar from './components/NavBar';
-import ImageAssesment from './components/ImageAssesment';
+import ImageAssesment from './components/ImageAssessment';
 import AboutUs from './components/AboutUs';
 
 function App() {
