@@ -82,7 +82,7 @@ function getCookie(cname) {
           setAuth({user, token});
           // setCookie('Token', token.access, 1)
           
-          d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+          d.setTime(d.getTime() + (10 * 60 * 1000));
           let expires = "expires="+d.toUTCString();
   
           document.cookie = "Token=" + token.access; + expires + ";" 
