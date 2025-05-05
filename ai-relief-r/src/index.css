@@ -58,3 +58,17 @@ ul {
   border-bottom: 2px solid white;
 
 }
+
+.section-login {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 5%;
+
+}

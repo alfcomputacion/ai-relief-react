@@ -62,7 +62,7 @@ function getCookie(cname) {
       const d = new Date();
       try{
    
-        const response = await fetch("http://127.0.0.1:8000/api/token/", {
+        const response = await fetch("https://relief.a.alfcomputacion.com/api/token/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -113,7 +113,7 @@ function getCookie(cname) {
     <>
     {
     
-    <section className='section-login'>
+    <section className='section-login shadow p-3 mb-5 bg-white rounded'>
       {/* <p ref={errRef} className={errMsg? "errmsg" :
       "offscreen"} aria-live='assertive'>{errMsg}</p> */}
       {errMsg ? (<p>{errMsg}</p>): (
@@ -122,6 +122,7 @@ function getCookie(cname) {
         <h1>Sign In</h1>
         <label htmlFor='username'>Username:</label>
         <input 
+            className='mt-1'
             type='text' 
             id='username'
             ref={userRef}
@@ -142,7 +143,7 @@ function getCookie(cname) {
         <div>
           <div className="d-grid">
             <button 
-              className='btn btn-outline-success text-white'
+              className='btn btn-success text-white mt-4'
               onClick={()=>handleSubmit()}
             >Sign in
             </button>
